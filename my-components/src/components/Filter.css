@@ -1,0 +1,11 @@
+.filter-container {
+    display: flex;
+}
+
+button {
+    margin: 10px !important;
+}
+
+button > span {
+    margin-left: 5px !important;
+}
