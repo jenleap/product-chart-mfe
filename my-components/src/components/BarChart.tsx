@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './BarChart.css';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
@@ -10,7 +10,7 @@ type BarChartProps = {
     dataValues: number[];
 }
 
-function BarChart(props: BarChartProps) {
+export const BarChart = (props: BarChartProps) => {
 
     const { title, xAxisCat, yAxisTitle, dataValues } = props;
 

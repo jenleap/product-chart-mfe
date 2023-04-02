@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
-import Filter from './common/Filter';
-import BarChart from './common/BarChart';
-import TableContainer from './common/TableContainer';
-import ProductDetail from './common/ProductDetail';
+import ProductDetail from './components/ProductDetail';
 
 const columnHeaders = [
   'title',
@@ -12,6 +9,34 @@ const columnHeaders = [
   'description',
   'rating'
 ];
+
+// Module Federation - importing this from myComponents
+const BarChart = React.lazy(() =>
+    // @ts-ignore
+    import("myComponents/BarChart").then((module) => {
+        return {
+            default: module.BarChart,
+        };
+    })
+);
+
+const Filter = React.lazy(() =>
+    // @ts-ignore
+    import("myComponents/Filter").then((module) => {
+        return {
+            default: module.Filter,
+        };
+    })
+);
+
+const TableContainer = React.lazy(() =>
+    // @ts-ignore
+    import("myComponents/TableContainer").then((module) => {
+        return {
+            default: module.TableContainer,
+        };
+    })
+);
 
 function App() {
   const storeURL = 'https://fakestoreapi.com/products';
@@ -106,16 +131,20 @@ function App() {
                   product={getSelectedProduct()}
                /> :
                <div className='chart-div'>
-                <BarChart 
-                  title="Price Comparison"
-                  xAxisCat={productLabels}
-                  yAxisTitle="Price"
-                  dataValues={productValues}
-                />
-                <TableContainer
-                  columns={tableColumns}
-                  rows={productRows}
+                <React.Suspense fallback={<div>Loading...</div>}>
+                  <BarChart 
+                    title="Price Comparison"
+                    xAxisCat={productLabels}
+                    yAxisTitle="Price"
+                    dataValues={productValues}
                   />
+                </React.Suspense>
+                <React.Suspense fallback={<div>Loading...</div>}>
+                  <TableContainer
+                    columns={tableColumns}
+                    rows={productRows}
+                    />
+                </React.Suspense>
               </div>
               }
             </div>

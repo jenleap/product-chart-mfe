@@ -23,7 +23,7 @@ type FilterProps = {
     clearSelection: any;
 }
 
-function Filter(props: FilterProps) {
+export const Filter = (props: FilterProps) => {
     const {selected, options, title, handleChange, clearSelection } = props;
   return (
     <div className='filter-container'>

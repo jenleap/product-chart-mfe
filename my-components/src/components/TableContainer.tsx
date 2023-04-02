@@ -8,7 +8,7 @@ type TableContainerProps = {
   rows: any[];
 };
 
-function TableContainer(props: TableContainerProps) {
+export const TableContainer = (props: TableContainerProps) => {
   return (
     <Paper>
       <Grid
