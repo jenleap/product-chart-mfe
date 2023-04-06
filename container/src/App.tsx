@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
 import ProductDetail from './components/ProductDetail';
+import Header from './components/Header';
 
 const columnHeaders = [
   'title',
@@ -37,6 +38,7 @@ const TableContainer = React.lazy(() =>
         };
     })
 );
+
 
 function App() {
   const storeURL = 'https://fakestoreapi.com/products';
@@ -101,9 +103,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="app-header">
-          <h1>My Fabulous Store</h1>
-      </header>
+      <Header />
       <div className='main-container'>
         <div className="side-bar">
             <Filter 

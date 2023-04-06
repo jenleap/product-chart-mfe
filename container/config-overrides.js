@@ -12,6 +12,7 @@ module.exports = function (config, env) {
         name: "container",
         remotes: {
             myComponents: `myComponents@http://localhost:3001/remoteEntry.js`,
+            header: `header@http://localhost:3003/remoteEntry.js`,
         },
         shared: {
           ...dependencies,
