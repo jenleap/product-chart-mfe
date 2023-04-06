@@ -9,7 +9,7 @@ const Header = () => {
         mount();
     }, []);
     // @ts-ignore
-    return <div><app-header title="My FABULOUS Store"></app-header></div>
+    return <div><app-header></app-header></div>
 }
 
 export default Header;
