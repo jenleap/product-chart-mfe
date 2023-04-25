@@ -3,6 +3,7 @@
 # dependencies
 /my-components/node_modules
 /container/node_modules
+/angular-header/node_modules
 /.pnp
 .pnp.js
 
