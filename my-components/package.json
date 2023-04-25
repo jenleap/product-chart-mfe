@@ -2,6 +2,7 @@
   "name": "product-chart-example",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@devexpress/dx-react-grid-material-ui": "^4.0.3",
     "@emotion/react": "^11.10.6",
@@ -28,8 +29,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "cross-env PORT=3001 react-app-rewired start",
-    "build": "react-app-rewired build",
+    "start": "vite serve",
+    "build": "vite build",
+    "dev": "vite serve",
+    "preview": "vite preview --port 3001 --strictPort",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
@@ -52,8 +55,12 @@
     ]
   },
   "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.2.2",
+    "@vitejs/plugin-react": "^4.0.0",
     "cross-env": "^7.0.3",
     "customize-cra": "^1.0.0",
-    "react-app-rewired": "^2.2.1"
+    "react-app-rewired": "^2.2.1",
+    "vite": "^4.3.1",
+    "vite-plugin-html": "^3.2.0"
   }
 }

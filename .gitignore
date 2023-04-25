@@ -3,7 +3,6 @@
 # dependencies
 /my-components/node_modules
 /container/node_modules
-/angular-header/node_modules
 /.pnp
 .pnp.js
 
@@ -12,6 +11,8 @@
 
 # production
 /build
+/my-components/src/dist
+/container/src/dist
 
 # misc
 .DS_Store

@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import ProductDetail from './components/ProductDetail';
 
+
 const columnHeaders = [
   'title',
   'price',
@@ -11,32 +12,32 @@ const columnHeaders = [
 ];
 
 // Module Federation - importing this from myComponents
-const BarChart = React.lazy(() =>
+ const BarChart = React.lazy(() =>
     // @ts-ignore
-    import("myComponents/BarChart").then((module) => {
+    import("component-lib/BarChart").then((module) => {
         return {
             default: module.BarChart,
         };
     })
-);
+); 
 
 const Filter = React.lazy(() =>
     // @ts-ignore
-    import("myComponents/Filter").then((module) => {
+    import("component-lib/Filter").then((module) => {
         return {
             default: module.Filter,
         };
     })
-);
+); 
 
 const TableContainer = React.lazy(() =>
     // @ts-ignore
-    import("myComponents/TableContainer").then((module) => {
+    import("component-lib/TableContainer").then((module) => {
         return {
             default: module.TableContainer,
         };
     })
-);
+); 
 
 function App() {
   const storeURL = 'https://fakestoreapi.com/products';

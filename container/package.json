@@ -28,8 +28,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "cross-env PORT=3002 react-app-rewired start",
-    "build": "react-app-rewired build",
+    "start": "vite serve",
+    "build": "vite build",
+    "preview": "vite preview --port 3002 --strictPort",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
